@@ -3,6 +3,7 @@ import {StoryAdPlacements} from '#experiments/story-ad-placements';
 
 import {CountPagesAlgorithm} from './algorithm-count-pages';
 import {PredeterminedPositionAlgorithm} from './algorithm-predetermined';
+import {CustomPositionAlgorithm} from './algorithm-custom-pages';
 
 /**
  * Choose placement algorithm implementation.
@@ -12,16 +13,5 @@ import {PredeterminedPositionAlgorithm} from './algorithm-predetermined';
  * @return {!StoryAdPlacementAlgorithm}
  */
 export function getPlacementAlgo(win, storeService, pageManager) {
-  const placementsExpBranch = getExperimentBranch(win, StoryAdPlacements.ID);
-  if (
-    placementsExpBranch &&
-    placementsExpBranch !== StoryAdPlacements.CONTROL
-  ) {
-    return new PredeterminedPositionAlgorithm(
-      storeService,
-      pageManager,
-      placementsExpBranch
-    );
-  }
-  return new CountPagesAlgorithm(storeService, pageManager);
+  return new CustomPositionAlgorithm(storeService, pageManager);
 }
