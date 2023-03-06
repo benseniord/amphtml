@@ -62,10 +62,6 @@ const EMBEDDED_COMPONENTS_SELECTORS = {
  * @private
  */
 const LAUNCHABLE_COMPONENTS = {
-  'a': {
-    actionIcon: LAUNCH_ICON_CLASS,
-    selector: 'a[href]',
-  },
   ...EMBEDDED_COMPONENTS_SELECTORS,
 };
 
