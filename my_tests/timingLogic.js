@@ -14,8 +14,8 @@ function onActiveChange(element, callback) {
 }
 
 function afterDelay() {
-  alert("5 seconds passed");
-  //window.location.assign("http://www.google.com");
+  //alert("5 seconds passed");
+  window.location.assign("http://www.google.com");
 }
 
 const itemToWatch = document.querySelector("#endcard");
